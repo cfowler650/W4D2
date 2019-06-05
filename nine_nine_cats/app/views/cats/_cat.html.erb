@@ -11,6 +11,17 @@ tfoot {
     background-color: #333;
     color: #fff;
 }</style>
+
+    <%# HEADER OF SHOW PAGE %>
+      <% if action == :show%>
+        
+        <h1> Welcome to <%= cat.name%>'s very own page! </h1>
+      <% end %>
+
+   <%# END HEADER OF SHOW PAGE %>
+
+
+
 <table>
     <thead>
         <tr>
@@ -39,14 +50,29 @@ tfoot {
 
 
 <% if action == :show %>
-    <li>
-      <a href = "<%= cats_url %>">go to index</a>
-    </li>
+
+
+    <style>
+      a {
+       margin-left: 30px;
+      }
+    </style>
+
+      
+
+      <a href = "<%= cats_url %>">Go back to index</a>
+   
+    <br>
 <% elsif action == :index %>
 
-
-
-    <li>
-      <a href = "<%= cat_url(cat) %>">go to cat</a>
-    </li>
+      <style>
+        a {
+        margin-left: 40px;
+        }
+      </style>
+      
+    
+      <a href = "<%= cat_url(cat) %>">Go to this cat</a>
+    <br>
+    <br>
 <% end %>

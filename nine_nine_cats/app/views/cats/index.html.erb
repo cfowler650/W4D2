@@ -1,8 +1,14 @@
-<h1>cat index</h1>
+<h1><style> h1 {margin-left: 80px;} </style> Index</h1>
 <ul>
-<% @cats.each do |cat| %>
-    <li>
-      <%= render 'cat', cat: cat, action: :index %>
-    </li>
-  <% end %>
+  <% @cats.each do |cat| %>
+      <li>
+        <%= render cat, action: :index %>
+      </li>
+    <% end %>
 </ul>
+
+<h2> create a cat </h2>
+ <li>
+    <a href = "<%= new_cat_url %>">create a cat</a>
+</li>
+  
